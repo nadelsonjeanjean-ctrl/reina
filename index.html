@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Modelo 3D - Pinsesa</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            color: white;
+        }
+        model-viewer {
+            width: 90vw;
+            height: 70vh;
+            max-width: 800px;
+            border-radius: 15px;
+            margin: 20px auto;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mi Modelo 3D - Pinsesa</h1>
+        <p>Gira y explora el modelo con el mouse/touch</p>
+        
+        <model-viewer
+            src="pinsesa.glb"
+            alt="Modelo 3D Pinsesa"
+            auto-rotate
+            camera-controls
+            ar
+            shadow-intensity="1"
+            camera-orbit="0deg 75deg 105%">
+        </model-viewer>
+    </div>
+</body>
+</html>
