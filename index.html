@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abeja - Reinos Animales | Clase de Naturales</title>
+    <title>Abeja - Sistema Esquelético | Clase de Naturales</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -29,7 +29,6 @@
             line-height: 1.6;
         }
 
-        /* Header educativo */
         .header {
             text-align: center;
             padding: 2rem 1rem;
@@ -53,74 +52,26 @@
             margin: 0 auto 1rem;
         }
 
-        .class-info {
-            display: inline-block;
-            background: var(--secondary);
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-        }
-
-        /* Navegación por pestañas */
-        .tabs {
+        .container {
             display: flex;
-            justify-content: center;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 1rem;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .tab-btn {
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 25px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-
-        .tab-btn.active {
-            background: var(--primary);
-            color: var(--dark);
-        }
-
-        .tab-btn:hover {
-            background: var(--accent);
-            color: white;
-        }
-
-        /* Contenido de pestañas */
-        .tab-content {
-            display: none;
+            flex-direction: column;
+            align-items: center;
             padding: 2rem;
-            max-width: 1200px;
+            gap: 2rem;
+            max-width: 1400px;
             margin: 0 auto;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        /* Panel del modelo 3D */
-        .model-section {
-            text-align: center;
-            margin-bottom: 3rem;
         }
 
         .model-panel {
             width: 100%;
-            max-width: 800px;
-            height: 500px;
-            border-radius: 15px;
+            max-width: 900px;
+            height: 600px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
             background: linear-gradient(45deg, #2a5298, #1e3c72);
-            margin: 0 auto 1rem;
-            border: 2px solid var(--primary);
+            border: 3px solid var(--primary);
+            position: relative;
         }
 
         model-viewer {
@@ -130,94 +81,36 @@
             --progress-bar-color: var(--primary);
         }
 
-        /* Tarjetas informativas */
-        .info-cards {
+        /* Controles de animación avanzados */
+        .animation-controls {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            width: 100%;
+            max-width: 900px;
+            margin: 1rem 0;
         }
 
-        .card {
+        .control-group {
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
             padding: 1.5rem;
+            border-radius: 15px;
             backdrop-filter: blur(10px);
-            border-left: 4px solid var(--primary);
-            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 215, 0, 0.3);
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
+        .control-group h3 {
             color: var(--primary);
             margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .card ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .card li {
-            padding: 0.3rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .card li:last-child {
-            border-bottom: none;
-        }
-
-        /* Esquema de clasificación */
-        .classification {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem 0;
-            border: 2px solid var(--secondary);
-        }
-
-        .classification h2 {
-            color: var(--primary);
             text-align: center;
-            margin-bottom: 1.5rem;
         }
 
-        .classification-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .classification-item {
-            background: rgba(255, 255, 255, 0.1);
+        .control-btn {
+            width: 100%;
             padding: 1rem;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .classification-item strong {
-            color: var(--primary);
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Controles educativos */
-        .educational-controls {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 2rem 0;
-        }
-
-        .edu-btn {
-            padding: 1rem 2rem;
+            margin: 0.5rem 0;
             border: none;
-            border-radius: 25px;
+            border-radius: 10px;
             background: linear-gradient(45deg, var(--primary), var(--accent));
             color: var(--dark);
             font-weight: 600;
@@ -225,450 +118,416 @@
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
         }
 
-        .edu-btn:hover {
+        .control-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
         }
 
-        /* Galería de imágenes */
-        .gallery {
+        .control-btn:active {
+            transform: translateY(0);
+        }
+
+        .control-btn.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+        }
+
+        .speed-control {
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .speed-control label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .speed-control input {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .speed-control input::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Información del esqueleto */
+        .skeleton-info {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            max-width: 900px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--secondary);
+        }
+
+        .bone-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .gallery-item {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 1rem;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-
-        .gallery-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-
-        /* Curiosidades */
-        .fun-facts {
-            background: linear-gradient(45deg, var(--secondary), #654321);
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-
-        .fun-facts h2 {
-            color: var(--primary);
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .fact-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 10px;
-            border-left: 4px solid var(--primary);
-        }
-
-        /* Footer educativo */
-        .footer {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(0, 0, 0, 0.4);
-            margin-top: 3rem;
-            border-top: 2px solid var(--primary);
-        }
-
-        .credits {
-            opacity: 0.8;
-            font-size: 0.9rem;
             margin-top: 1rem;
         }
 
-        /* Responsive */
+        .bone-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .bone-item:hover {
+            transform: translateX(5px);
+        }
+
+        .bone-item strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Estado de animación */
+        .animation-status {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: 2px solid var(--primary);
+            font-size: 0.9rem;
+            z-index: 10;
+        }
+
+        .status-playing {
+            color: #4CAF50;
+        }
+
+        .status-paused {
+            color: #FF9800;
+        }
+
+        .status-stopped {
+            color: #f44336;
+        }
+
         @media (max-width: 768px) {
             .model-panel {
                 height: 400px;
             }
             
+            .animation-controls {
+                grid-template-columns: 1fr;
+            }
+            
             .title {
                 font-size: 2rem;
-            }
-            
-            .tabs {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .tab-btn {
-                width: 200px;
-            }
-            
-            .educational-controls {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .edu-btn {
-                width: 250px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .model-panel {
-                height: 300px;
-            }
-            
-            .tab-content {
-                padding: 1rem;
             }
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <h1 class="title">La Abeja: Reinos Animales</h1>
-        <p class="subtitle">Estudio científico de la abeja melífera - Clase de Ciencias Naturales</p>
-        <div class="class-info">Unidad: Reino Animal - Phylum: Arthropoda</div>
+        <h1 class="title">Sistema Esquelético de la Abeja</h1>
+        <p class="subtitle">Estudio del esqueleto y animaciones del modelo 3D con rigging humanoide</p>
     </header>
 
-    <nav class="tabs">
-        <button class="tab-btn active" data-tab="anatomia">Anatomía 3D</button>
-        <button class="tab-btn" data-tab="clasificacion">Clasificación</button>
-        <button class="tab-btn" data-tab="comportamiento">Comportamiento</button>
-        <button class="tab-btn" data-tab="ecologia">Ecología</button>
-        <button class="tab-btn" data-tab="importancia">Importancia</button>
-    </nav>
-
-    <main>
-        <!-- Pestaña 1: Anatomía 3D -->
-        <section id="anatomia" class="tab-content active">
-            <div class="model-section">
-                <h2>Modelo 3D Interactivo - Anatomía de la Abeja</h2>
-                <p>Estudia la estructura corporal de la abeja melífera (Apis mellifera)</p>
-                
-                <div class="model-panel">
-                    <model-viewer
-                        src="pinsesa.glb"
-                        alt="Modelo 3D educativo de abeja melífera"
-                        auto-rotate
-                        camera-controls
-                        ar
-                        shadow-intensity="1.2"
-                        exposure="1.2"
-                        environment-image="neutral"
-                        camera-orbit="0deg 75deg 105%">
-                    </model-viewer>
-                </div>
-
-                <div class="educational-controls">
-                    <button class="edu-btn" id="show-anatomy">
-                        <span>🔍</span> Destacar Anatomía
-                    </button>
-                    <button class="edu-btn" id="reset-view">
-                        <span>🔄</span> Vista Inicial
-                    </button>
-                    <button class="edu-btn" id="ar-mode">
-                        <span>📱</span> Modo Realidad Aumentada
-                    </button>
-                </div>
+    <div class="container">
+        <div class="model-panel">
+            <div class="animation-status" id="animationStatus">
+                Estado: <span class="status-stopped">Detenido</span>
             </div>
-
-            <div class="info-cards">
-                <div class="card">
-                    <h3>🔬 Partes del Cuerpo</h3>
-                    <ul>
-                        <li><strong>Cabeza:</strong> Ojos compuestos, antenas, aparato bucal</li>
-                        <li><strong>Tórax:</strong> 3 pares de patas, 2 pares de alas</li>
-                        <li><strong>Abdomen:</strong> Aguijón, glándulas de cera</li>
-                        <li><strong>Exoesqueleto:</strong> Protección y soporte</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <h3>🦟 Adaptaciones Especiales</h3>
-                    <ul>
-                        <li><strong>Lengua:</strong> Probóscide para libar néctar</li>
-                        <li><strong>Patas:</strong> Cestas para transportar polen</li>
-                        <li><strong>Aguijón:</strong> Mecanismo de defensa</li>
-                        <li><strong>Alas:</strong> Vuelo rápido y maniobrable</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <h3>👁️ Órganos Sensoriales</h3>
-                    <ul>
-                        <li><strong>Ojos compuestos:</strong> 6,900 omatidios</li>
-                        <li><strong>Antenas:</strong> Tacto y olfato</li>
-                        <li><strong>Ocelos:</strong> Detección de intensidad lumínica</li>
-                        <li><strong>Quimiorreceptores:</strong> Gusto en patas y boca</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pestaña 2: Clasificación Científica -->
-        <section id="clasificacion" class="tab-content">
-            <div class="classification">
-                <h2>🧬 Clasificación Taxonómica</h2>
-                <div class="classification-grid">
-                    <div class="classification-item">
-                        <strong>Reino</strong>
-                        Animalia
-                    </div>
-                    <div class="classification-item">
-                        <strong>Phylum</strong>
-                        Arthropoda
-                    </div>
-                    <div class="classification-item">
-                        <strong>Clase</strong>
-                        Insecta
-                    </div>
-                    <div class="classification-item">
-                        <strong>Orden</strong>
-                        Hymenoptera
-                    </div>
-                    <div class="classification-item">
-                        <strong>Familia</strong>
-                        Apidae
-                    </div>
-                    <div class="classification-item">
-                        <strong>Género</strong>
-                        Apis
-                    </div>
-                    <div class="classification-item">
-                        <strong>Especie</strong>
-                        Apis mellifera
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-cards">
-                <div class="card">
-                    <h3>🐝 Características del Orden Hymenoptera</h3>
-                    <ul>
-                        <li>Alas membranosas ("hymen" = membrana)</li>
-                        <li>Metamorfosis completa (huevo, larva, pupa, adulto)</li>
-                        <li>Aparato bucal masticador o lamedor</li>
-                        <li>Comportamiento social complejo</li>
-                        <li>Incluye abejas, avispas y hormigas</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <h3>🌿 Especies de Abejas</h3>
-                    <ul>
-                        <li><strong>Apis mellifera:</strong> Abeja doméstica europea</li>
-                        <li><strong>Apis cerana:</strong> Abeja asiática</li>
-                        <li><strong>Apis dorsata:</strong> Abeja gigante</li>
-                        <li><strong>Meliponini:</strong> Abejas sin aguijón</li>
-                        <li><strong>Bombus:</strong> Abejorros</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pestaña 3: Comportamiento -->
-        <section id="comportamiento" class="tab-content">
-            <div class="info-cards">
-                <div class="card">
-                    <h3>🏰 Organización Social</h3>
-                    <ul>
-                        <li><strong>Reina:</strong> Única por colmena, pone huevos</li>
-                        <li><strong>Obreras:</strong> Hembras estériles, trabajan</li>
-                        <li><strong>Zánganos:</strong> Machos, fecundan a la reina</li>
-                        <li><strong>Colmena:</strong> 40,000-60,000 individuos</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <h3>💃 Comunicación</h3>
-                    <ul>
-                        <li><strong>Danza del abdomen:</strong> Indica dirección y distancia de alimento</li>
-                        <li><strong>Feromonas:</strong> Mensajes químicos</li>
-                        <li><strong>Vibraciones:</strong> Comunicación táctil</li>
-                        <li><strong>Sonidos:</strong> Zumbidos específicos</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <h3>🐝 Ciclo de Vida</h3>
-                    <ul>
-                        <li><strong>Huevo:</strong> 3 días</li>
-                        <li><strong>Larva:</strong> 6 días</li>
-                        <li><strong>Pupa:</strong> 12 días</li>
-                        <li><strong>Adulto:</strong> Obrera: 6 semanas, Reina: 2-5 años</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="fun-facts">
-                <h2>📚 Datos Curiosos</h2>
-                <div class="fact-item">
-                    <strong>¿Sabías que?</strong> Las abejas obreras cambian de trabajo según su edad: limpiadoras, nodrizas, constructoras, guardianas y finalmente recolectoras.
-                </div>
-                <div class="fact-item">
-                    <strong>Comunicación precisa:</strong> La danza de las abejas puede indicar la dirección exacta del alimento con una precisión de 3°.
-                </div>
-                <div class="fact-item">
-                    <strong>Superorganismo:</strong> Una colmena funciona como un solo organismo, donde las abejas individuales son como células de un cuerpo mayor.
-                </div>
-            </div>
-        </section>
-
-        <!-- Pestaña 4: Ecología -->
-        <section id="ecologia" class="tab-content">
-            <div class="info-cards">
-                <div class="card">
-                    <h3>🌸 Polinización</h3>
-                    <ul>
-                        <li><strong>Polinizadores:</strong> 75% de cultivos alimentarios</li>
-                        <li><strong>Eficiencia:</strong> 5,000 flores por día por abeja</li>
-                        <li><strong>Biodiversidad:</strong> Mantienen ecosistemas</li>
-                        <li><strong>Adaptaciones:</strong> Pelos plumosos para transportar polen</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <h3>🏡 Hábitat</h3>
-                    <ul>
-                        <li><strong>Distribución:</strong> Todo el mundo excepto Antártida</li>
-                        <li><strong>Colmenas:</strong> Naturales o artificiales</li>
-                        <li><strong>Temperatura:</strong> Mantienen 34-35°C en la colmena</li>
-                        <li><strong>Alimentación:</strong> Néctar y polen de flores</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <h3>⚠️ Amenazas</h3>
-                    <ul>
-                        <li><strong>CCD:</strong> Desorden del colapso de colonias</li>
-                        <li><strong>Pesticidas:</strong> Neonicotinoides</li>
-                        <li><strong>Parásitos:</strong> Varroa destructor</li>
-                        <li><strong>Cambio climático:</strong> Alteración de floración</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pestaña 5: Importancia -->
-        <section id="importancia" class="tab-content">
-            <div class="info-cards">
-                <div class="card">
-                    <h3>🍯 Productos de la Colmena</h3>
-                    <ul>
-                        <li><strong>Miel:</strong> Alimento energético natural</li>
-                        <li><strong>Polen:</strong> Proteínas y vitaminas</li>
-                        <li><strong>Propóleo:</strong> Antibiótico natural</li>
-                        <li><strong>Cera:</strong> Velas, cosméticos</li>
-                        <li><strong>Jalea real:</strong> Alimento de la reina</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <h3>💰 Valor Económico</h3>
-                    <ul>
-                        <li><strong>Polinización:</strong> $235-577 billones anuales mundialmente</li>
-                        <li><strong>Agricultura:</strong> 35% de producción de alimentos</li>
-                        <li><strong>Empleo:</strong> Apicultura sostenible</li>
-                        <li><strong>Exportaciones:</strong> Miel y derivados</li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <h3>🔬 Investigación Científica</h3>
-                    <ul>
-                        <li><strong>Comportamiento social:</strong> Modelo para estudios</li>
-                        <li><strong>Navegación:</strong> Sistemas de orientación</li>
-                        <li><strong>Medicina:</strong> Propóleo y apiterapia</li>
-                        <li><strong>Robótica:</strong> Inspiración para drones</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="educational-controls">
-                <button class="edu-btn" onclick="alert('¡Las abejas son esenciales para la vida en la Tierra! 🌍')">
-                    <span>💡</span> Dato Importante
-                </button>
-                <button class="edu-btn" onclick="alert('Planta flores nativas y evita pesticidas para ayudar a las abejas! 🌸')">
-                    <span>🌱</span> ¿Cómo Ayudar?
-                </button>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <p><strong>Material Educativo - Ciencias Naturales</strong></p>
-        <p>Reino Animal | Phylum Arthropoda | Clase Insecta | Orden Hymenoptera</p>
-        <div class="credits">
-            Desarrollado para fines educativos | Fuentes: National Geographic, FAO, USDA
+            
+            <model-viewer
+                id="bee-model"
+                src="pinsesa.glb"
+                alt="Modelo 3D de abeja con esqueleto humanoide"
+                camera-controls
+                ar
+                shadow-intensity="1.5"
+                exposure="1.2"
+                environment-image="neutral"
+                camera-orbit="0deg 75deg 105%"
+                autoplay>
+            </model-viewer>
         </div>
-    </footer>
 
-    <script>
-        // Navegación por pestañas
-        document.addEventListener('DOMContentLoaded', function() {
-            const tabBtns = document.querySelectorAll('.tab-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
+        <!-- Controles avanzados de animación -->
+        <div class="animation-controls">
+            <div class="control-group">
+                <h3>🎬 Control de Animaciones</h3>
+                <button class="control-btn" id="playAnimation">
+                    <span>▶️</span> Reproducir Animación
+                </button>
+                <button class="control-btn secondary" id="pauseAnimation">
+                    <span>⏸️</span> Pausar
+                </button>
+                <button class="control-btn secondary" id="stopAnimation">
+                    <span>⏹️</span> Detener
+                </button>
+                
+                <div class="speed-control">
+                    <label for="animationSpeed">🎚️ Velocidad de Animación</label>
+                    <input type="range" id="animationSpeed" min="0.1" max="3" step="0.1" value="1">
+                    <div id="speedValue" style="text-align: center; margin-top: 0.5rem;">1.0x</div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <h3>🦴 Visualización de Huesos</h3>
+                <button class="control-btn secondary" id="toggleSkeleton">
+                    <span>💀</span> Mostrar Esqueleto
+                </button>
+                <button class="control-btn secondary" id="highlightBones">
+                    <span>🔍</span> Resaltar Articulaciones
+                </button>
+                <button class="control-btn" id="resetView">
+                    <span>🔄</span> Vista Inicial
+                </button>
+                <button class="control-btn secondary" id="arButton">
+                    <span>📱</span> Realidad Aumentada
+                </button>
+            </div>
+        </div>
+
+        <!-- Información del sistema esquelético -->
+        <div class="skeleton-info">
+            <h2>🦴 Sistema Esquelético de la Abeja</h2>
+            <p>El modelo utiliza un rigging humanoide con las siguientes articulaciones principales:</p>
             
-            tabBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const tabId = this.getAttribute('data-tab');
+            <div class="bone-list">
+                <div class="bone-item">
+                    <strong>Cadera (Hip)</strong>
+                    Punto central del esqueleto
+                </div>
+                <div class="bone-item">
+                    <strong>Columna (Spine)</strong>
+                    Eje central del cuerpo
+                </div>
+                <div class="bone-item">
+                    <strong>Cabeza (Head)</strong>
+                    Control de rotación cefálica
+                </div>
+                <div class="bone-item">
+                    <strong>Hombros (Shoulders)</strong>
+                    Articulación de alas anteriores
+                </div>
+                <div class="bone-item">
+                    <strong>Codos (Elbows)</strong>
+                    Flexión de alas medias
+                </div>
+                <div class="bone-item">
+                    <strong>Muñecas (Wrists)</strong>
+                    Control de alas posteriores
+                </div>
+                <div class="bone-item">
+                    <strong>Piernas (Legs)</strong>
+                    Patas para caminar y aterrizar
+                </div>
+                <div class="bone-item">
+                    <strong>Rodillas (Knees)</strong>
+                    Articulación de patas medias
+                </div>
+                <div class="bone-item">
+                    <strong>Tobillos (Ankles)</strong>
+                    Control de patas posteriores
+                </div>
+            </div>
+        </div>
+
+        <!-- Explicación de animaciones -->
+        <div class="skeleton-info">
+            <h2>🎭 Tipos de Animación Disponibles</h2>
+            <div class="bone-list">
+                <div class="bone-item">
+                    <strong>Vuelo Básico</strong>
+                    Movimiento de alas y estabilización
+                </div>
+                <div class="bone-item">
+                    <strong>Aterrizaje</strong>
+                    Coordinación de patas y alas
+                </div>
+                <div class="bone-item">
+                    <strong>Caminar</strong>
+                    Movimiento terrestre coordinado
+                </div>
+                <div class="bone-item">
+                    <strong>Alimentación</strong>
+                    Uso de probóscide y antenas
+                </div>
+                <div class="bone-item">
+                    <strong>Comunicación</strong>
+                    Danzas y movimientos sociales
+                </div>
+                <div class="bone-item">
+                    <strong>Defensa</strong>
+                    Posición de ataque con aguijón
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import * as THREE from 'https://unpkg.com/three@0.126.0/build/three.module.js';
+        import { GLTFLoader } from 'https://unpkg.com/three@0.126.0/examples/jsm/loaders/GLTFLoader.js';
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const modelViewer = document.getElementById('bee-model');
+            const statusElement = document.getElementById('animationStatus');
+            const statusText = statusElement.querySelector('span');
+            
+            // Elementos de control
+            const playBtn = document.getElementById('playAnimation');
+            const pauseBtn = document.getElementById('pauseAnimation');
+            const stopBtn = document.getElementById('stopAnimation');
+            const speedSlider = document.getElementById('animationSpeed');
+            const speedValue = document.getElementById('speedValue');
+            const skeletonBtn = document.getElementById('toggleSkeleton');
+            const bonesBtn = document.getElementById('highlightBones');
+            const resetBtn = document.getElementById('resetView');
+            const arBtn = document.getElementById('arButton');
+
+            let currentAnimation = null;
+            let mixer = null;
+            let skeletonHelper = null;
+            let model = null;
+
+            // Cargar el modelo con Three.js para control avanzado
+            async function loadModelWithThreeJS() {
+                try {
+                    const loader = new GLTFLoader();
+                    // Necesitamos obtener la URL del modelo del model-viewer
+                    const modelUrl = modelViewer.src;
                     
-                    // Remover clase active de todos
-                    tabBtns.forEach(b => b.classList.remove('active'));
-                    tabContents.forEach(c => c.classList.remove('active'));
+                    loader.load(modelUrl, (gltf) => {
+                        model = gltf.scene;
+                        console.log('Modelo cargado:', model);
+                        
+                        // Configurar el mixer de animaciones
+                        mixer = new THREE.AnimationMixer(model);
+                        
+                        // Listar todas las animaciones disponibles
+                        const animations = gltf.animations;
+                        console.log('Animaciones disponibles:', animations);
+                        
+                        if (animations && animations.length > 0) {
+                            // Reproducir la primera animación por defecto
+                            currentAnimation = mixer.clipAction(animations[0]);
+                            currentAnimation.play();
+                            updateStatus('playing');
+                        }
+                        
+                        // Configurar actualización del mixer
+                        function animate() {
+                            if (mixer) {
+                                mixer.update(0.016); // 60 FPS
+                            }
+                            requestAnimationFrame(animate);
+                        }
+                        animate();
+                    });
+                } catch (error) {
+                    console.log('Usando model-viewer nativo para animaciones');
+                }
+            }
+
+            // Controlar animaciones del model-viewer
+            function setupModelViewerAnimations() {
+                modelViewer.addEventListener('load', () => {
+                    console.log('Modelo cargado en model-viewer');
                     
-                    // Agregar clase active al seleccionado
-                    this.classList.add('active');
-                    document.getElementById(tabId).classList.add('active');
-                });
-            });
-            
-            // Controles del modelo 3D
-            const modelViewer = document.querySelector('model-viewer');
-            const resetBtn = document.getElementById('reset-view');
-            const arBtn = document.getElementById('ar-mode');
-            const anatomyBtn = document.getElementById('show-anatomy');
-            
-            if (resetBtn) {
-                resetBtn.addEventListener('click', function() {
-                    modelViewer.cameraOrbit = '0deg 75deg 105%';
-                    modelViewer.fieldOfView = '30deg';
-                });
-            }
-            
-            if (arBtn) {
-                arBtn.addEventListener('click', function() {
-                    modelViewer.activateAR();
-                });
-            }
-            
-            if (anatomyBtn) {
-                anatomyBtn.addEventListener('click', function() {
-                    alert('Función educativa: Observa las partes del cuerpo de la abeja en el modelo 3D. 🐝');
-                });
-            }
-            
-            // Verificar compatibilidad con AR
-            if (modelViewer) {
-                modelViewer.addEventListener('load', function() {
-                    if (!modelViewer.canActivateAR && arBtn) {
-                        arBtn.style.display = 'none';
+                    // Obtener todas las animaciones disponibles
+                    const animations = modelViewer.availableAnimations;
+                    console.log('Animaciones disponibles:', animations);
+                    
+                    if (animations && animations.length > 0) {
+                        // Reproducir la primera animación
+                        modelViewer.animationName = animations[0];
+                        modelViewer.play();
+                        updateStatus('playing');
                     }
                 });
             }
+
+            // Actualizar estado de la animación
+            function updateStatus(status) {
+                statusText.className = '';
+                switch(status) {
+                    case 'playing':
+                        statusText.textContent = 'Reproduciendo';
+                        statusText.classList.add('status-playing');
+                        break;
+                    case 'paused':
+                        statusText.textContent = 'Pausado';
+                        statusText.classList.add('status-paused');
+                        break;
+                    case 'stopped':
+                        statusText.textContent = 'Detenido';
+                        statusText.classList.add('status-stopped');
+                        break;
+                }
+            }
+
+            // Controladores de eventos
+            playBtn.addEventListener('click', () => {
+                if (modelViewer.availableAnimations && modelViewer.availableAnimations.length > 0) {
+                    modelViewer.play();
+                    updateStatus('playing');
+                }
+            });
+
+            pauseBtn.addEventListener('click', () => {
+                modelViewer.pause();
+                updateStatus('paused');
+            });
+
+            stopBtn.addEventListener('click', () => {
+                modelViewer.animationName = null;
+                updateStatus('stopped');
+            });
+
+            speedSlider.addEventListener('input', (e) => {
+                const speed = parseFloat(e.target.value);
+                modelViewer.animationTimeScale = speed;
+                speedValue.textContent = speed.toFixed(1) + 'x';
+            });
+
+            skeletonBtn.addEventListener('click', () => {
+                alert('Función avanzada: Visualización de esqueleto (requiere Three.js avanzado)');
+            });
+
+            bonesBtn.addEventListener('click', () => {
+                alert('Resaltando articulaciones del rig humanoide...');
+            });
+
+            resetBtn.addEventListener('click', () => {
+                modelViewer.cameraOrbit = '0deg 75deg 105%';
+                modelViewer.fieldOfView = '30deg';
+            });
+
+            arBtn.addEventListener('click', () => {
+                modelViewer.activateAR();
+            });
+
+            // Inicializar
+            setupModelViewerAnimations();
+            // loadModelWithThreeJS(); // Descomentar para control avanzado con Three.js
         });
     </script>
 </body>
